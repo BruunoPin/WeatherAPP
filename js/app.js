@@ -9,14 +9,6 @@ const weatherIcon = document.querySelector('[data-js="time-icon"]');
 const weatherDetails = document.querySelector('[data-js="weather-details"]');
 const body = document.querySelector("body");
 
-// Function to change Background Image
-const changeImageBackground = cityName => {
-  const apiUnsplash = "https://source.unsplash.com/1600x900/?";
-
-  // Change Image
-  body.style.backgroundImage = `url("${apiUnsplash + cityName}")`;
-};
-
 // Function to show city information
 const showCityWeatherInfo = async (cityName) => {
   const { name, weather, main, wind, sys } = await getWeather(cityName);
@@ -39,6 +31,12 @@ const showCityWeatherInfo = async (cityName) => {
     "src",
     `https://countryflagsapi.com/png/${sys.country}`
   );
+
+  // Function to change Background Image
+  const changeImageBackground = (cityName) => {
+    // Change Image
+    awaitbody.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${cityName}")`;
+  };
 
   // Remove d-none
   weatherDetails.classList.remove("d-none");
