@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Weather</title>
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100">
+  <div class="container">
+
+    <form
+      class="weather-box my-4 shadow-lg rounded-lg text-uppercase text-center text-whit  p-4">
+      <p class="box-title text-light text-center mb-4 font-weight-bold">Confira o clima de uma cidade:</p>
+      <!-- INPUT com Button -->
+      <div class="d-flex">
+        <input class="form-control p-4 mr-0" type="text" name="city" placeholder="Ex: Miami" autofocus />
+        <button class="border border-0 btn btn-info ml-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
+
+
+    <div data-js="weather-details" class="weather-box shadow-lg rounded-lg text-uppercase text-center text-white d-none">
+      <!-- Nome da Cidade com Ícone e Bandeira -->
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <i class="fa-solid fa-location-dot mr-1 p-1"></i>
+        <h5 data-js="city-name" class="my-3">Nome da Cidade</h5>
+        <img data-js="country-flag" class="country-flag ml-2 p-1" alt="Flag Country" />
+      </div>
+
+      <!-- Clima com Ícone -->
+      <div class="d-flex justify-content-center align-items-center">
+        <div data-js="city-weather" class="my-3 ml-3">
+          Clima
+        </div>
+
+        <img data-js="time-icon" class="time-icon " />
+
+      </div>
+
+      <!-- Temperatura -->
+      <div class="display-4 my-4">
+        <span data-js="city-temperature">00</span>
+        <span>&deg;C</span>
+      </div>
+
+      <!-- Umidade -->
+      <div class="d-flex justify-content-center display-5 my-1">
+        <p class="humidity mx-3">
+          <i class="fa-solid fa-droplet"></i>
+          <span data-js="city-humidity">48</span><span>%</span>
+        </p>
+        <span class="border bg-secondary mb-3"></span>
+
+        <!-- Velocidade do Vento -->
+        <p class="wind border-left-2 mx-3 text-lowercase">
+          <i class="fa-solid fa-wind"></i>
+          <span data-js="city-wind">3</span><span>m/s</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/weather.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
