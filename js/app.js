@@ -12,7 +12,7 @@ const body = document.querySelector("body");
 // Function to change Background Image
 const changeImageBackground = (cityName) => {
   // Change Image
-  awaitbody.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${cityName}")`;
+  body.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${cityName}")`;
 };
 
 // Function to show city information
