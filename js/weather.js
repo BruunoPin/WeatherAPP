@@ -16,4 +16,3 @@ const getWeather = async (cityName) => {
     alert(`${name}: ${message}`);
   }
 }
-

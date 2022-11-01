@@ -17,13 +17,7 @@ const changeImageBackground = (cityName) => {
 
 // Function to show city information
 const showCityWeatherInfo = async (cityName) => {
-  const {
-    name,
-    weather,
-    main,
-    wind,
-    sys
-  } = await getWeather(cityName);
+  const { name, weather, main, wind, sys } = await getWeather(cityName);
 
   // Change names
   cityNameCard.textContent = name;
@@ -48,10 +42,23 @@ const showCityWeatherInfo = async (cityName) => {
   weatherDetails.classList.remove("d-none");
 };
 
+// Keeps the last city searched
+const showLocalStorage = () => {
+  const cityValue = localStorage.getItem("city");
+
+  if (cityValue) {
+    showCityWeatherInfo(cityValue);
+
+    changeImageBackground(cityValue);
+  }
+};
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const cityInput = event.target.city.value;
+
+  localStorage.setItem("city", cityInput);
 
   showCityWeatherInfo(cityInput);
 
@@ -59,3 +66,5 @@ form.addEventListener("submit", (event) => {
 
   form.reset();
 });
+
+showLocalStorage()
